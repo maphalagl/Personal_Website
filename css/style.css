@@ -1,42 +1,43 @@
 /* CSS Resets & Creative Theme Variables */
 :root {
-    /* Default Dark Mode (Deep Cyber Black) */
-    --bg-color: #000000;
+    /* Creative Midnight Dark Mode */
+    --bg-color: #030308;
     --text-color: #f1f1f1;
-    --text-muted: #a0a0b0;
+    --text-muted: #8888a0;
 
     --accent: #00f0ff;
-    --accent-secondary: #ff0055;
-    --accent-tertiary: #b026ff;
+    --accent-secondary: #ff0077;
+    --accent-tertiary: #a026ff;
 
     --accent-glow: rgba(0, 240, 255, 0.4);
-    --secondary-glow: rgba(255, 0, 85, 0.3);
+    --secondary-glow: rgba(255, 0, 119, 0.3);
 
-    --glass-bg: rgba(20, 20, 35, 0.5);
-    --glass-border: rgba(0, 240, 255, 0.15);
-    --glass-border-hover: rgba(0, 240, 255, 0.5);
+    --glass-bg: rgba(10, 10, 20, 0.6);
+    --glass-border: rgba(0, 240, 255, 0.1);
+    --glass-border-hover: rgba(0, 240, 255, 0.4);
 
-    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
 /* Light Mode Variables targeted by JS on HTML root */
 html[data-theme="light"] {
-    --bg-color: #f0f2f5;
-    --text-color: #1a1a24;
-    --text-muted: #5a5a6e;
+    /* Creative Pearl Light Mode */
+    --bg-color: #fcfcfd;
+    --text-color: #12121a;
+    --text-muted: #66667a;
 
-    --accent: #0066ff;
-    --accent-secondary: #ff3366;
-    --accent-tertiary: #8800ff;
+    --accent: #0055ff;
+    --accent-secondary: #ff2266;
+    --accent-tertiary: #7700ff;
 
-    --accent-glow: rgba(0, 102, 255, 0.3);
-    --secondary-glow: rgba(255, 51, 102, 0.2);
+    --accent-glow: rgba(0, 85, 255, 0.2);
+    --secondary-glow: rgba(255, 34, 102, 0.1);
 
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(0, 102, 255, 0.2);
-    --glass-border-hover: rgba(0, 102, 255, 0.6);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 85, 255, 0.15);
+    --glass-border-hover: rgba(0, 85, 255, 0.5);
 
-    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -53,10 +54,20 @@ html {
 
 body {
     background-color: var(--bg-color);
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(20, 20, 40, 0.3) 0%, transparent 100%),
+        radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(160, 38, 255, 0.03) 0%, transparent 50%);
     color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.6;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background 0.8s ease, color 0.5s ease;
+}
+
+html[data-theme="light"] body {
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(0, 85, 255, 0.03) 0%, transparent 100%),
+        radial-gradient(circle at 20% 30%, rgba(255, 34, 102, 0.02) 0%, transparent 40%);
 }
 
 /* Background Super Blobs */
