@@ -1284,8 +1284,9 @@ header {
 
     .theme-toggle {
         display: flex !important;
-        width: 44px !important;
-        height: 44px !important;
+        width: 46px !important;
+        /* Matched with hamburger */
+        height: 46px !important;
         align-items: center;
         justify-content: center;
         background: rgba(255, 255, 255, 0.05) !important;
