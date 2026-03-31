@@ -199,18 +199,24 @@ header {
 }
 
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    /* Logo | Links | Controls */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
-    gap: 20px;
+    gap: 0;
+}
+
+/* Flex spacers for absolute centering on desktop */
+.nav-spacer {
+    flex: 1;
 }
 
 .logo {
     font-size: 2rem;
     font-weight: 800;
     cursor: pointer;
+    min-width: 151px;
+    /* Match right controls width for symmetry */
 }
 
 .logo span {
@@ -825,15 +831,42 @@ header {
     font-weight: 600;
 }
 
-.edu-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    font-weight: 700;
+/* Timeline Track Feature */
+.timeline-wrapper {
+    position: relative;
+    padding-left: 50px;
+    margin-top: 50px;
 }
 
-.edu-card h4 {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+.timeline-track {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--accent-tertiary));
+    box-shadow: 0 0 15px var(--accent-glow);
+    z-index: 1;
+}
+
+.timeline-node {
+    position: absolute;
+    left: -37px;
+    /* Center with the line */
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    background: var(--bg-color);
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-glow);
+    z-index: 2;
+}
+
+.edu-card {
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
 }
 
 .edu-card p {
