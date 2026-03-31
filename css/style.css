@@ -141,7 +141,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 5%;
+    padding: 0 4%;
+    /* Slightly smaller for more content room */
+    box-sizing: border-box;
 }
 
 .section-spacing {
@@ -174,6 +176,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    width: 100%;
 }
 
 .logo {
@@ -1162,7 +1165,9 @@ header {
     }
 
     .project-card {
-        width: 320px;
+        width: 100%;
+        max-width: 320px;
+        /* Ensure cards never exceed screen width */
     }
 
     .experience-layout {
@@ -1239,7 +1244,14 @@ header {
 
     .navbar {
         height: 70px;
-        padding: 0 20px;
+        padding: 0;
+        /* Remove double-padding (inherits from .container) */
+    }
+
+    .logo {
+        font-size: 1.5rem !important;
+        /* Smaller logo for mobile to prevent overflow */
+        white-space: nowrap;
     }
 
     .nav-links {
