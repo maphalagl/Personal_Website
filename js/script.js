@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create Filter Tabs
         const filterTabs = document.createElement('div');
-        filterTabs.className = 'filter-tabs';
+        filterTabs.className = 'skills-filter'; // Match CSS class name!
 
         categories.forEach(cat => {
             const btn = document.createElement('button');
@@ -240,5 +240,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         renderSkills('All');
+
+        // Fail-safe: ensure container is visible after rendering
+        setTimeout(() => {
+            arsenalContainer.classList.add('visible');
+        }, 300);
     }
 });
