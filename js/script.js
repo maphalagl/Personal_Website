@@ -111,47 +111,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // 5. 3D TILT EFFECT on Glass Cards
+    // 5. 3D TILT EFFECT on Glass Cards (Disabled on mobile for performance)
     const tiltCards = document.querySelectorAll('.tilt-card, .vanilla-tilt');
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-    tiltCards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    if (!isTouchDevice) {
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
 
-            const rotateX = ((y - centerY) / centerY) * -8;
-            const rotateY = ((x - centerX) / centerX) * 8;
+                const rotateX = ((y - centerY) / centerY) * -8;
+                const rotateY = ((x - centerX) / centerX) * 8;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            if (card.classList.contains('vanilla-tilt')) {
-                card.style.borderColor = 'var(--accent)';
-                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent-glow)';
-            }
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                if (card.classList.contains('vanilla-tilt')) {
+                    card.style.borderColor = 'var(--accent)';
+                    card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent-glow)';
+                }
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                card.style.transition = 'all 0.5s ease';
+                if (card.classList.contains('vanilla-tilt')) {
+                    card.style.borderColor = 'var(--glass-border)';
+                    card.style.boxShadow = 'var(--card-shadow)';
+                }
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
         });
+    }
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-            card.style.transition = 'all 0.5s ease';
-            if (card.classList.contains('vanilla-tilt')) {
-                card.style.borderColor = 'var(--glass-border)';
-                card.style.boxShadow = 'var(--card-shadow)';
-            }
-        });
-
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'none';
-        });
-    });
-
-    // 6. CYBER GHOST CURSOR
+    // 6. CYBER GHOST CURSOR (Disabled on mobile for performance)
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
 
-    if (cursorDot && cursorOutline) {
+    if (cursorDot && cursorOutline && !isTouchDevice) {
         document.body.classList.add('custom-cursor-active');
 
         window.addEventListener('mousemove', (e) => {
@@ -173,5 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
         });
+    } else if (isTouchDevice && cursorDot && cursorOutline) {
+        // Just hide them if we are on mobile to prevent weird behavior
+        cursorDot.style.display = 'none';
+        cursorOutline.style.display = 'none';
     }
 });

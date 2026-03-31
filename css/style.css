@@ -1212,17 +1212,17 @@ header {
         width: 100%;
         height: calc(100vh - 80px);
         background: var(--glass-bg);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         padding: 50px 0;
         transition: 0.4s ease;
         align-items: center;
         gap: 40px;
+        z-index: 999;
     }
 
     .nav-links.nav-active {
         left: 0;
-        z-index: 100;
     }
 
     .nav-links a {
@@ -1230,7 +1230,11 @@ header {
     }
 
     .hamburger {
-        display: block;
+        display: block !important;
+        position: relative;
+        z-index: 1001;
+        /* Ensure button is above everything */
+        color: var(--accent) !important;
     }
 
     /* Floating Hub Mobile */
