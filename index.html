@@ -25,6 +25,10 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">Lutendo<span>.</span></div>
+
+                <!-- Spacer for left-side symmetry -->
+                <div class="nav-spacer"></div>
+
                 <ul class="nav-links">
                     <li><a href="#hero" class="nav-item">Home</a></li>
                     <li><a href="#about" class="nav-item">About</a></li>
@@ -34,6 +38,10 @@
                     <li><a href="#projects" class="nav-item">Projects</a></li>
                     <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
+
+                <!-- Spacer for right-side symmetry -->
+                <div class="nav-spacer"></div>
+
                 <div class="nav-controls">
                     <button id="theme-btn" class="theme-toggle" aria-label="Toggle Theme">
                         <i class="fas fa-sun"></i>
@@ -128,8 +136,11 @@
                     </div>
 
                     <!-- Right Side Scrolling List -->
-                    <div class="experience-list-new">
-                        <div class="exp-item transition-item slide-in-right">
+                    <div class="timeline-wrapper">
+                        <div class="timeline-track"></div>
+
+                        <div class="exp-item glass-card transition-item slide-in-right">
+                            <div class="timeline-node"></div>
                             <span class="date">June 2025 – Present</span>
                             <h3>Software Development Intern</h3>
                             <h4 class="highlight">SpecCon Holdings (Pty) Ltd.</h4>
@@ -143,7 +154,8 @@
                             </ul>
                         </div>
 
-                        <div class="exp-item transition-item slide-in-right delay-1">
+                        <div class="exp-item glass-card transition-item slide-in-right delay-1">
+                            <div class="timeline-node"></div>
                             <span class="date">Dec 2024 – Nov 2025</span>
                             <h3>Business Analysis Learnership</h3>
                             <h4 class="highlight">Shaper (Digital Academy)</h4>
@@ -168,9 +180,12 @@
                     <h2><i class="fas fa-graduation-cap"></i> Education</h2>
                 </div>
 
-                <div class="education-grid">
+                <div class="timeline-wrapper">
+                    <div class="timeline-track"></div>
+
                     <!-- Education 1 -->
                     <div class="edu-card glass-card hover-zoom vanilla-tilt transition-item fade-in">
+                        <div class="timeline-node"></div>
                         <div class="edu-icon"><i class="fas fa-university"></i></div>
                         <span class="edu-date">Completed, Nov 2023</span>
                         <h3>BSc Information Technology</h3>
@@ -181,6 +196,7 @@
 
                     <!-- Education 2 -->
                     <div class="edu-card glass-card hover-zoom vanilla-tilt transition-item fade-in delay-1">
+                        <div class="timeline-node"></div>
                         <div class="edu-icon"><i class="fas fa-book"></i></div>
                         <span class="edu-date">Completed, 2020</span>
                         <h3>Dip. Accounting & Financial Computing</h3>
@@ -191,6 +207,7 @@
 
                     <!-- Education 3 -->
                     <div class="edu-card glass-card hover-zoom vanilla-tilt transition-item fade-in delay-2">
+                        <div class="timeline-node"></div>
                         <div class="edu-icon"><i class="fas fa-school"></i></div>
                         <span class="edu-date">Completed, Nov 2018</span>
                         <h3>National Senior Certificate</h3>
