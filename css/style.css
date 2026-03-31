@@ -1,43 +1,45 @@
 /* CSS Resets & Creative Theme Variables */
 :root {
-    /* Creative Midnight Dark Mode */
-    --bg-color: #030308;
+    /* Bold Obsidian Indigo Mode (v3.3) */
+    --bg-color: #0d0d21;
+    /* High-saturation deep indigo */
     --text-color: #f1f1f1;
-    --text-muted: #8888a0;
+    --text-muted: #8c8caf;
 
     --accent: #00f0ff;
-    --accent-secondary: #ff0077;
-    --accent-tertiary: #a026ff;
+    --accent-secondary: #ff00cc;
+    --accent-tertiary: #9d00ff;
 
     --accent-glow: rgba(0, 240, 255, 0.4);
-    --secondary-glow: rgba(255, 0, 119, 0.3);
+    --secondary-glow: rgba(255, 0, 204, 0.3);
 
-    --glass-bg: rgba(10, 10, 20, 0.6);
-    --glass-border: rgba(0, 240, 255, 0.1);
-    --glass-border-hover: rgba(0, 240, 255, 0.4);
+    --glass-bg: rgba(15, 15, 35, 0.7);
+    --glass-border: rgba(0, 240, 255, 0.15);
+    --glass-border-hover: rgba(0, 240, 255, 0.5);
 
-    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Light Mode Variables targeted by JS on HTML root */
 html[data-theme="light"] {
-    /* Creative Pearl Light Mode */
-    --bg-color: #fcfcfd;
-    --text-color: #12121a;
-    --text-muted: #66667a;
+    /* Bold Cyan-Mist Light Mode (v3.3) */
+    --bg-color: #eef6ff;
+    /* Visible soft blue tint */
+    --text-color: #0a0a1f;
+    --text-muted: #5a5a7e;
 
-    --accent: #0055ff;
-    --accent-secondary: #ff2266;
-    --accent-tertiary: #7700ff;
+    --accent: #0044ff;
+    --accent-secondary: #ff0066;
+    --accent-tertiary: #6600ff;
 
-    --accent-glow: rgba(0, 85, 255, 0.2);
-    --secondary-glow: rgba(255, 34, 102, 0.1);
+    --accent-glow: rgba(0, 68, 255, 0.2);
+    --secondary-glow: rgba(255, 0, 102, 0.1);
 
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --glass-border: rgba(0, 85, 255, 0.15);
-    --glass-border-hover: rgba(0, 85, 255, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 68, 255, 0.2);
+    --glass-border-hover: rgba(0, 68, 255, 0.6);
 
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 * {
