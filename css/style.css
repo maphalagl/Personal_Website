@@ -851,12 +851,12 @@ header {
 .timeline-wrapper {
     position: relative;
     padding-left: 50px;
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
 .timeline-track {
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 20px;
     width: 2px;
     height: 100%;
@@ -867,16 +867,36 @@ header {
 
 .timeline-node {
     position: absolute;
-    left: -37px;
-    /* Center with the line */
+    left: -38px;
+    /* Corrected alignment: 50px - 38px = 12px edge. Track at 20px center. */
     top: 15px;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background: var(--bg-color);
     border: 3px solid var(--accent);
     border-radius: 50%;
     box-shadow: 0 0 10px var(--accent-glow);
     z-index: 2;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.timeline-node::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.exp-item:hover .timeline-node::after,
+.edu-card:hover .timeline-node::after {
+    opacity: 1;
 }
 
 .edu-card {
@@ -1483,5 +1503,23 @@ header {
     .vanilla-tilt {
         transform-style: preserve-3d;
         will-change: transform;
+    }
+}
+
+/* v3.6 Timeline Mobile Hardening */
+@media screen and (max-width: 768px) {
+    .timeline-wrapper {
+        padding-left: 35px;
+    }
+
+    .timeline-track {
+        left: 15px;
+    }
+
+    .timeline-node {
+        left: -27px;
+        /* 35 - 27 = 8px edge. Track at 15px centers with 14px node */
+        width: 14px;
+        height: 14px;
     }
 }
