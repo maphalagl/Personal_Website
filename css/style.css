@@ -1297,8 +1297,9 @@ header {
 
     .nav-controls {
         display: flex !important;
+        align-items: center;
         gap: 12px;
-        margin-left: auto;
+        z-index: 10001;
     }
 
     .hero-hub-content .hero-name {
