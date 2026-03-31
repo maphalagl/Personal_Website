@@ -169,6 +169,20 @@ header {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
     transition: background 0.5s, border 0.5s;
+    transition: none !important;
+    /* Force static for responsiveness */
+}
+
+.linkedin-btn {
+    background: #0077b5 !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3) !important;
+}
+
+.linkedin-btn:hover {
+    background: #0088cc !important;
+    transform: translateY(-3px);
 }
 
 .navbar {
