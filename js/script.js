@@ -2,19 +2,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 0. DEVICE DETECTION
     let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    // 0.1 MAGNETIC BUTTON EFFECT (Premium Interaction)
+    // 0.1 MAGNETIC BUTTON EFFECT (Performance Optimized with Throttle)
     const magneticItems = document.querySelectorAll('.nav-controls a, .nav-controls div, .social-icon, .btn');
     if (!isTouchDevice) {
         magneticItems.forEach(item => {
+            let rect = null;
+            let rafId = null;
+
+            item.addEventListener('mouseenter', () => {
+                rect = item.getBoundingClientRect();
+            });
+
             item.addEventListener('mousemove', (e) => {
-                const rect = item.getBoundingClientRect();
+                if (!rect) return;
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                item.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(() => {
+                    item.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
             });
 
             item.addEventListener('mouseleave', () => {
+                if (rafId) cancelAnimationFrame(rafId);
                 item.style.transform = `translate(0, 0)`;
+                rect = null;
             });
         });
     }

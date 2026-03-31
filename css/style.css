@@ -363,9 +363,10 @@ header {
     border-radius: 24px;
     padding: 35px;
     box-shadow: var(--card-shadow);
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, background 0.5s;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s;
     position: relative;
     z-index: 10;
+    will-change: transform, box-shadow;
 }
 
 .tilt-card {
