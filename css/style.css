@@ -1256,7 +1256,7 @@ header {
                 grid-template-columns: 1fr;
             }
 
-            .bento-message {}
+            /* .bento-message {} */
         }
 
         /* --- Responsive Media Queries --- */
@@ -1434,3 +1434,5 @@ header {
                 will-change: transform;
             }
         }
+    }
+}
