@@ -2,6 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // 0. DEVICE DETECTION
     let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
+    // 0.1 MAGNETIC BUTTON EFFECT (Premium Interaction)
+    const magneticItems = document.querySelectorAll('.nav-controls a, .nav-controls div, .social-icon, .btn');
+    if (!isTouchDevice) {
+        magneticItems.forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                item.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = `translate(0, 0)`;
+            });
+        });
+    }
+
     // 1. THEME TOGGLE LOGIC (Fixed targeted towards 'html' root!)
     const themeBtn = document.getElementById('theme-btn');
     const rootHtml = document.documentElement; // Gets the <html> node
@@ -183,6 +200,19 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorDot.style.display = 'none';
         cursorOutline.style.display = 'none';
     }
+
+    // 6.1 STAGGERED PROJECTS LOAD
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 150);
+            }
+        });
+    }, { threshold: 0.1 });
+    projectCards.forEach(card => projectObserver.observe(card));
 
     // 7. VANILLA JS TECH ARSENAL (Replacing React for Mobile Performance)
     const skillsData = [

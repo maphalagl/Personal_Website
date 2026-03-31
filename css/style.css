@@ -1,7 +1,7 @@
 /* CSS Resets & Creative Theme Variables */
 :root {
-    /* Default Dark Mode (Cyber) */
-    --bg-color: #05050A;
+    /* Default Dark Mode (Deep Cyber Black) */
+    --bg-color: #000000;
     --text-color: #f1f1f1;
     --text-muted: #a0a0b0;
 
@@ -57,6 +57,20 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     transition: background-color 0.5s ease, color 0.5s ease;
+    position: relative;
+}
+
+/* Premium Grain Texture */
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://grain-y.com/images/grain.png');
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 10000;
 }
 
 /* Background Super Blobs */
