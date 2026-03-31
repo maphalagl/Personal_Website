@@ -1159,8 +1159,9 @@ header {
     }
 
     .education-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        /* Stack vertically on mobile */
+        gap: 25px;
     }
 
     .project-card {
@@ -1317,6 +1318,18 @@ header {
         gap: 12px;
         z-index: 10001;
         justify-self: end;
+        /* Disable animations for instant responsiveness on mobile */
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .logo,
+    .theme-toggle,
+    .hamburger {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
     }
 
     .hero-hub-content .hero-name {
