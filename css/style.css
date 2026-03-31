@@ -1202,7 +1202,14 @@ header {
 
 @media (max-width: 768px) {
 
-    /* Mobile Hamburger Nav System */
+    header {
+        transition: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: #0a0a15 !important;
+        /* Solid background for performance */
+    }
+
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -1211,14 +1218,16 @@ header {
         left: -100%;
         width: 100%;
         height: calc(100vh - 80px);
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: #0a0a15;
+        /* Solid background */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
         padding: 50px 0;
-        transition: 0.4s ease;
+        transition: left 0.3s ease;
+        /* Single property transition */
         align-items: center;
         gap: 40px;
-        z-index: 999;
+        z-index: 9999;
     }
 
     .nav-links.nav-active {
@@ -1230,11 +1239,27 @@ header {
     }
 
     .hamburger {
-        display: block !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
         position: relative;
-        z-index: 1001;
-        /* Ensure button is above everything */
+        z-index: 9999 !important;
         color: var(--accent) !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .theme-toggle {
+        display: flex !important;
+        z-index: 9999 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .nav-controls {
+        display: flex !important;
+        gap: 15px;
+        z-index: 9999;
     }
 
     /* Floating Hub Mobile */
