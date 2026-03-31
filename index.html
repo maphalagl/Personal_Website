@@ -339,56 +339,38 @@
                         just want to chat? Drop a message below.</p>
                 </div>
 
-                <div class="contact-bento">
-                    <!-- The Main Form (Takes 2 Columns) -->
-                    <div class="bento-box bento-form glass-card vanilla-tilt transition-item slide-in-left">
-                        <h3 style="margin-bottom: 25px; font-size: 2.2rem;">Send a Direct Message</h3>
-                        <form action="mailto:gmlutendo@gmail.com" method="post" enctype="text/plain"
-                            class="modern-form">
-                            <div class="form-row">
-                                <div class="form-group anim-input">
-                                    <input type="text" id="name" name="Name" required placeholder="Your Name"
-                                        class="form-control">
-                                </div>
-                                <div class="form-group anim-input">
-                                    <input type="email" id="email" name="Email" required placeholder="Your Email"
-                                        class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group anim-input">
-                                <textarea id="msg" name="Message" rows="5" required
-                                    placeholder="Let's build something great together..."
-                                    class="form-control"></textarea>
-                            </div>
-                            <button type="submit" class="btn primary w-100" style="width: 100%;">Send Message <i
-                                    class="fas fa-paper-plane move-icon"></i></button>
-                        </form>
-                    </div>
+                <div class="contact-info glass-card transition-item slide-in-left">
+                    <h3>Connect with Me</h3>
+                    <p class="mt-2" style="margin-bottom: 25px;">Ready to elevate your business through elegant tech?
+                        Let's discuss your next project.</p>
 
-                    <!-- The Mini Cards (Right Column) -->
-                    <div class="bento-box bento-email glass-card contact-mini transition-item slide-in-right delay-1">
+                    <div class="contact-mini">
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div>
-                            <h4>Email Me At</h4>
-                            <a href="mailto:gmlutendo@gmail.com">gmlutendo@gmail.com</a>
+                            <h4>Email</h4>
+                            <a href="mailto:gmlutendo@gmail.com" class="link-arrow">gmlutendo@gmail.com</a>
                         </div>
                     </div>
 
-                    <div class="bento-box bento-phone glass-card contact-mini transition-item slide-in-right delay-2">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-mini" style="margin-top: 20px;">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
                         <div>
-                            <h4>Call Me At</h4>
-                            <a href="tel:+27712705587">+27 71 270 5587</a>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/lutendo-maphala" target="_blank" class="link-arrow">Lutendo
+                                Maphala</a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="bento-box bento-social glass-card contact-mini transition-item slide-in-right delay-3">
-                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                        <div>
-                            <h4>Connect On</h4>
-                            <a href="https://www.linkedin.com/in/lutendo-george-maphala-660689181/"
-                                target="_blank">LinkedIn Profile</a>
-                        </div>
+                <div class="contact-form-container glass-card transition-item slide-in-right">
+                    <h3>Send a Direct Message</h3>
+                    <div style="margin-top: 30px; text-align: center;">
+                        <p style="margin-bottom: 30px; color: var(--text-muted);">Please click below to send me a direct
+                            email via your preferred mail client.</p>
+                        <a href="mailto:gmlutendo@gmail.com?subject=Portfolio Inquiry" class="btn primary"
+                            style="width: 100%; text-decoration: none;">
+                            <i class="fas fa-paper-plane"></i> Launch Email Client
+                        </a>
                     </div>
                 </div>
             </div>
@@ -403,72 +385,8 @@
     </footer>
 
     <!-- Core Javascript -->
-    <script src="js/script.js?v=1.1"></script>
+    <script src="js/script.js?v=1.2"></script>
 
-    <!-- React JS Integration (CDN) -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-    <!-- Custom React Component for Tech Arsenal -->
-    <script type="text/babel">
-        const { useState } = React;
-
-        const skillsData = [
-            { id: 1, name: 'Python', icon: 'fab fa-python', category: 'Languages' },
-            { id: 2, name: 'Java', icon: 'fab fa-java', category: 'Languages' },
-            { id: 3, name: 'JavaScript', icon: 'fab fa-js-square', category: 'Languages' },
-            { id: 4, name: 'C#', icon: 'fas fa-hashtag', category: 'Languages' },
-            { id: 5, name: 'SQL', icon: 'fas fa-database', category: 'Languages' },
-            { id: 6, name: 'React.js', icon: 'fab fa-react', category: 'Frontend' },
-            { id: 7, name: 'HTML5/CSS3', icon: 'fab fa-html5', category: 'Frontend' },
-            { id: 8, name: 'MudBlazor', icon: 'fab fa-windows', category: 'Frontend' },
-            { id: 9, name: 'GitHub/Git', icon: 'fab fa-github', category: 'Tools' },
-            { id: 10, name: 'Jira', icon: 'fab fa-jira', category: 'Tools' },
-            { id: 11, name: 'Power Automate', icon: 'fas fa-cogs', category: 'Workflow' },
-            { id: 12, name: 'SharePoint', icon: 'fas fa-share-alt', category: 'Workflow' }
-        ];
-
-        function TechArsenal() {
-            const [filter, setFilter] = useState('All');
-            const categories = ['All', 'Languages', 'Frontend', 'Tools', 'Workflow'];
-
-            const filteredSkills = filter === 'All'
-                ? skillsData
-                : skillsData.filter(s => s.category === filter);
-
-            return (
-                <div className="react-skills-container">
-                    <div className="skills-filter">
-                        {categories.map(cat => (
-                            <button
-                                key={cat}
-                                className={`filter-btn ${filter === cat ? 'active' : ''}`}
-                                onClick={() => setFilter(cat)}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="skills-grid">
-                        {filteredSkills.map(skill => (
-                            <div key={skill.id} className="skill-chip fade-in-react">
-                                <i className={skill.icon}></i>
-                                <span>{skill.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            );
-        }
-
-        const rootNode = document.getElementById('react-tech-arsenal');
-        if (rootNode) {
-            const root = ReactDOM.createRoot(rootNode);
-            root.render(<TechArsenal />);
-        }
-    </script>
     <!-- Custom Glowing Cursor UI -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>

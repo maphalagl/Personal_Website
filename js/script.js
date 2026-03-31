@@ -181,4 +181,62 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorDot.style.display = 'none';
         cursorOutline.style.display = 'none';
     }
+
+    // 7. VANILLA JS TECH ARSENAL (Replacing React for Mobile Performance)
+    const skillsData = [
+        { id: 1, name: 'Python', icon: 'fab fa-python', category: 'Languages' },
+        { id: 2, name: 'Java', icon: 'fab fa-java', category: 'Languages' },
+        { id: 3, name: 'JavaScript', icon: 'fab fa-js-square', category: 'Languages' },
+        { id: 4, name: 'C#', icon: 'fas fa-hashtag', category: 'Languages' },
+        { id: 5, name: 'SQL', icon: 'fas fa-database', category: 'Languages' },
+        { id: 6, name: 'React.js', icon: 'fab fa-react', category: 'Frontend' },
+        { id: 7, name: 'HTML5/CSS3', icon: 'fab fa-html5', category: 'Frontend' },
+        { id: 8, name: 'MudBlazor', icon: 'fab fa-windows', category: 'Frontend' },
+        { id: 9, name: 'GitHub/Git', icon: 'fab fa-github', category: 'Tools' },
+        { id: 10, name: 'Jira', icon: 'fab fa-jira', category: 'Tools' },
+        { id: 11, name: 'Power Automate', icon: 'fas fa-cogs', category: 'Workflow' },
+        { id: 12, name: 'SharePoint', icon: 'fas fa-share-alt', category: 'Workflow' }
+    ];
+
+    const arsenalContainer = document.getElementById('react-tech-arsenal');
+    if (arsenalContainer) {
+        const categories = ['All', 'Languages', 'Frontend', 'Tools', 'Workflow'];
+
+        // Create Filter Tabs
+        const filterTabs = document.createElement('div');
+        filterTabs.className = 'filter-tabs';
+
+        categories.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = `filter-btn ${cat === 'All' ? 'active' : ''}`;
+            btn.textContent = cat;
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderSkills(cat);
+            });
+            filterTabs.appendChild(btn);
+        });
+
+        const skillsGrid = document.createElement('div');
+        skillsGrid.className = 'skills-grid';
+
+        arsenalContainer.innerHTML = '';
+        arsenalContainer.appendChild(filterTabs);
+        arsenalContainer.appendChild(skillsGrid);
+
+        function renderSkills(filter) {
+            skillsGrid.innerHTML = '';
+            const filtered = filter === 'All' ? skillsData : skillsData.filter(s => s.category === filter);
+
+            filtered.forEach(skill => {
+                const chip = document.createElement('div');
+                chip.className = 'skill-chip fade-in-react';
+                chip.innerHTML = `<i class="${skill.icon}"></i> <span>${skill.name}</span>`;
+                skillsGrid.appendChild(chip);
+            });
+        }
+
+        renderSkills('All');
+    }
 });
