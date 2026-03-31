@@ -1257,9 +1257,10 @@ header {
     }
 
     .navbar {
+        display: flex !important;
+        justify-content: space-between !important;
         height: 70px;
         padding: 0;
-        /* Remove double-padding (inherits from .container) */
     }
 
     .logo {
