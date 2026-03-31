@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lutendo George Maphala - Portfolio</title>
+    <meta name="description"
+        content="Personal portfolio of Lutendo George Maphala - Software Developer & Business Analyst.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Animated Gradients -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Lutendo<span>.</span></div>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-item">Home</a></li>
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#experience" class="nav-item">Experience</a></li>
+                    <li><a href="#education" class="nav-item">Education</a></li>
+                    <li><a href="#skills" class="nav-item">Skills</a></li>
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-btn" class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section (Floating Glass Hub Layout) -->
+        <section id="hero" class="hero-hub">
+            <div class="container">
+                <div class="glass-hero-panel transition-item fade-in float-anim">
+                    <!-- Left Side: Content -->
+                    <div class="hero-hub-content transition-item slide-in-left delay-1">
+                        <span class="badge pulse-badge" style="width: fit-content; margin-bottom: 20px;">Software
+                            Developer & Business Analyst</span>
+                        <h1 class="hero-name highlight">Lutendo George Maphala</h1>
+                        <p class="hero-desc">Bridging the gap between technical execution and business needs with
+                            elegant, dynamic solutions.</p>
+
+                        <div class="cta-buttons" style="justify-content: flex-start; margin-top: 30px;">
+                            <a href="https://github.com/maphalagl" target="_blank" class="btn primary"><i
+                                    class="fab fa-github pop-icon"></i> GitHub</a>
+                            <a href="Lutendo_CV.pdf" download class="btn secondary"><i
+                                    class="fas fa-download bounce-icon"></i> Download CV</a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Circular Avatar -->
+                    <div class="hero-hub-image transition-item slide-in-right delay-2">
+                        <div class="photo-frame">
+                            <img src="images/Lutendo.jpg" alt="Lutendo George Maphala">
+                        </div>
+                        <div class="status-indicator mt-2" style="margin-top: 25px;">
+                            <div class="status-dot"></div>
+                            <span style="font-weight: 700; color: var(--text-color); font-size: 1.1rem;">Available for
+                                Work</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-spacing">
+            <div class="container">
+                <div class="section-title transition-item slide-up">
+                    <h2><i class="fas fa-user-circle"></i> About Me</h2>
+                </div>
+
+                <div class="about-modern glass-card transition-item slide-up delay-1">
+                    <div class="about-text">
+                        <p>I am a multifaceted IT professional with a solid foundation in <strong>Software
+                                Development</strong> and <strong>Business Analysis</strong>. Coming from a financial
+                            computing background and transitioning into systematic software development, I enjoy
+                            leveraging technology to streamline complex business processes.</p>
+                        <p class="mt-2 text-margin">My passion lies in creating efficient, automated workflows, building
+                            responsive user interfaces, and ensuring that technical solutions perfectly align with
+                            organizational objectives. I am constantly learning, adapting, and striving for excellence
+                            in every line of code I write.</p>
+                    </div>
+
+                    <div class="about-badges">
+                        <div class="mini-badge"><i class="fas fa-graduation-cap"></i> BSc IT Graduate</div>
+                        <div class="mini-badge"><i class="fas fa-briefcase"></i> IT Professional</div>
+                        <div class="mini-badge"><i class="fas fa-cogs"></i> Business Analyst</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section (Sticky Side Panel) -->
+        <section id="experience" class="experience section-spacing">
+            <div class="container">
+                <div class="experience-layout">
+                    <!-- Left Side Sticky Intro -->
+                    <div class="experience-intro transition-item slide-in-left">
+                        <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                            <h2><i class="fas fa-laptop-code"></i> Experience</h2>
+                        </div>
+                        <p>My career journey highlighting core achievements, technical growth, and business analysis
+                            implementation.</p>
+                    </div>
+
+                    <!-- Right Side Scrolling List -->
+                    <div class="experience-list-new">
+                        <div class="exp-item transition-item slide-in-right">
+                            <span class="date">June 2025 – Present</span>
+                            <h3>Software Development Intern</h3>
+                            <h4 class="highlight">SpecCon Holdings (Pty) Ltd.</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Improved system architecture by refactoring synchronous
+                                    API calls.</li>
+                                <li><i class="fas fa-check"></i> Designed automated recruitment systems using Power
+                                    Automate, Forms, and SharePoint.</li>
+                                <li><i class="fas fa-check"></i> Developed interactive user interfaces using MudBlazor
+                                    and React.js.</li>
+                            </ul>
+                        </div>
+
+                        <div class="exp-item transition-item slide-in-right delay-1">
+                            <span class="date">Dec 2024 – Nov 2025</span>
+                            <h3>Business Analysis Learnership</h3>
+                            <h4 class="highlight">Shaper (Digital Academy)</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Gained foundational knowledge of Business Analysis,
+                                    needs assessment, and stakeholder engagement.</li>
+                                <li><i class="fas fa-check"></i> Identified stakeholders using power–interest grids to
+                                    form engagement strategies.</li>
+                                <li><i class="fas fa-check"></i> Acquired knowledge of SDLC, Agile concepts, Scrum, and
+                                    Kanban methodologies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education section-spacing">
+            <div class="container">
+                <div class="section-title transition-item slide-up">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                </div>
+
+                <div class="education-grid">
+                    <!-- Education 1 -->
+                    <div class="edu-card glass-card hover-zoom vanilla-tilt transition-item fade-in">
+                        <div class="edu-icon"><i class="fas fa-university"></i></div>
+                        <span class="edu-date">Completed, Nov 2023</span>
+                        <h3>BSc Information Technology</h3>
+                        <h4 class="highlight">Richfield Graduate Institute of Technology</h4>
+                        <p><strong>Concentrations:</strong> System Development (Data structures, Algorithms, Desktop
+                            C#/Java, Web HTML/CSS/JS).</p>
+                    </div>
+
+                    <!-- Education 2 -->
+                    <div class="edu-card glass-card hover-zoom vanilla-tilt transition-item fade-in delay-1">
+                        <div class="edu-icon"><i class="fas fa-book"></i></div>
+                        <span class="edu-date">Completed, 2020</span>
+                        <h3>Dip. Accounting & Financial Computing</h3>
+                        <h4 class="highlight">Rosebank College</h4>
+                        <p><strong>Coursework:</strong> Financial Computing, Accounting, Management Accounting,
+                            Taxation, Economics.</p>
+                    </div>
+
+                    <!-- Education 3 -->
+                    <div class="edu-card glass-card hover-zoom vanilla-tilt transition-item fade-in delay-2">
+                        <div class="edu-icon"><i class="fas fa-school"></i></div>
+                        <span class="edu-date">Completed, Nov 2018</span>
+                        <h3>National Senior Certificate</h3>
+                        <h4 class="highlight">Sinthumule Secondary School</h4>
+                        <p><strong>Coursework:</strong> Accounting, Business Studies, Economics, Mathematics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tech Arsenal (Reactized) -->
+        <section id="skills" class="skills section-spacing" style="overflow: hidden;">
+            <div class="container">
+                <div class="section-title transition-item slide-up" style="margin-bottom: 30px;">
+                    <h2><i class="fas fa-bolt"></i> Tech Arsenal</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 10px;">Powered interactively by
+                        <i class="fab fa-react" style="color: #61DBFB;"></i> React
+                    </p>
+                </div>
+
+                <!-- React will mount here -->
+                <div id="react-tech-arsenal" class="transition-item slide-up delay-1"></div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section-spacing">
+            <div class="container">
+                <div class="section-title transition-item slide-up">
+                    <h2><i class="fas fa-project-diagram"></i> My Projects</h2>
+                </div>
+            </div>
+            <div class="projects-flow-container transition-item fade-in">
+                <div class="projects-flow-track">
+                    <!-- Project 1 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-hammer pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">A new project is currently under
+                                construction. Stay tuned for updates soon!</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-code-branch pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">An exciting new development is in
+                                progress. More information will be available after the official reveal.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-chart-line pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">An innovative platform is being
+                                built periodically. Check back soon for the grand unveiling.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-cogs pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">A streamlined new solution is under
+                                construction. We are working hard to bring this to life.</p>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE SET FOR INFINITE FLOW -->
+                    <!-- Project 1 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-hammer pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">A new project is currently under
+                                construction. Stay tuned for updates soon!</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-code-branch pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">An exciting new development is in
+                                progress. More information will be available after the official reveal.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-chart-line pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">An innovative platform is being
+                                built periodically. Check back soon for the grand unveiling.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 Placeholder -->
+                    <div class="project-card glass-card vanilla-tilt">
+                        <div class="project-img-placeholder">
+                            <i class="fas fa-cogs pulse-badge"></i>
+                            <span>Under Construction</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Coming Soon...</h3>
+                            <p style="color: var(--text-muted); font-size: 1.1rem;">A streamlined new solution is under
+                                construction. We are working hard to bring this to life.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-spacing">
+            <div class="container">
+                <div class="section-title transition-item slide-up">
+                    <h2><i class="fas fa-paper-plane"></i> Let's Connect</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 15px;">Have an opportunity or
+                        just want to chat? Drop a message below.</p>
+                </div>
+
+                <div class="contact-bento">
+                    <!-- The Main Form (Takes 2 Columns) -->
+                    <div class="bento-box bento-form glass-card vanilla-tilt transition-item slide-in-left">
+                        <h3 style="margin-bottom: 25px; font-size: 2.2rem;">Send a Direct Message</h3>
+                        <form action="mailto:gmlutendo@gmail.com" method="post" enctype="text/plain"
+                            class="modern-form">
+                            <div class="form-row">
+                                <div class="form-group anim-input">
+                                    <input type="text" id="name" name="Name" required placeholder="Your Name"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group anim-input">
+                                    <input type="email" id="email" name="Email" required placeholder="Your Email"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group anim-input">
+                                <textarea id="msg" name="Message" rows="5" required
+                                    placeholder="Let's build something great together..."
+                                    class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn primary w-100" style="width: 100%;">Send Message <i
+                                    class="fas fa-paper-plane move-icon"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- The Mini Cards (Right Column) -->
+                    <div class="bento-box bento-email glass-card contact-mini transition-item slide-in-right delay-1">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Me At</h4>
+                            <a href="mailto:gmlutendo@gmail.com">gmlutendo@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="bento-box bento-phone glass-card contact-mini transition-item slide-in-right delay-2">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Call Me At</h4>
+                            <a href="tel:+27712705587">+27 71 270 5587</a>
+                        </div>
+                    </div>
+
+                    <div class="bento-box bento-social glass-card contact-mini transition-item slide-in-right delay-3">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <h4>Connect On</h4>
+                            <a href="https://www.linkedin.com/in/lutendo-george-maphala-660689181/"
+                                target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">Lutendo<span>.</span></div>
+            <p>&copy; 2026 Lutendo George Maphala. Designed with passion & code.</p>
+        </div>
+    </footer>
+
+    <!-- Core Javascript -->
+    <script src="js/script.js"></script>
+
+    <!-- React JS Integration (CDN) -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Custom React Component for Tech Arsenal -->
+    <script type="text/babel">
+        const { useState } = React;
+
+        const skillsData = [
+            { id: 1, name: 'Python', icon: 'fab fa-python', category: 'Languages' },
+            { id: 2, name: 'Java', icon: 'fab fa-java', category: 'Languages' },
+            { id: 3, name: 'JavaScript', icon: 'fab fa-js-square', category: 'Languages' },
+            { id: 4, name: 'C#', icon: 'fas fa-hashtag', category: 'Languages' },
+            { id: 5, name: 'SQL', icon: 'fas fa-database', category: 'Languages' },
+            { id: 6, name: 'React.js', icon: 'fab fa-react', category: 'Frontend' },
+            { id: 7, name: 'HTML5/CSS3', icon: 'fab fa-html5', category: 'Frontend' },
+            { id: 8, name: 'MudBlazor', icon: 'fab fa-windows', category: 'Frontend' },
+            { id: 9, name: 'GitHub/Git', icon: 'fab fa-github', category: 'Tools' },
+            { id: 10, name: 'Jira', icon: 'fab fa-jira', category: 'Tools' },
+            { id: 11, name: 'Power Automate', icon: 'fas fa-cogs', category: 'Workflow' },
+            { id: 12, name: 'SharePoint', icon: 'fas fa-share-alt', category: 'Workflow' }
+        ];
+
+        function TechArsenal() {
+            const [filter, setFilter] = useState('All');
+            const categories = ['All', 'Languages', 'Frontend', 'Tools', 'Workflow'];
+
+            const filteredSkills = filter === 'All'
+                ? skillsData
+                : skillsData.filter(s => s.category === filter);
+
+            return (
+                <div className="react-skills-container">
+                    <div className="skills-filter">
+                        {categories.map(cat => (
+                            <button
+                                key={cat}
+                                className={`filter-btn ${filter === cat ? 'active' : ''}`}
+                                onClick={() => setFilter(cat)}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="skills-grid">
+                        {filteredSkills.map(skill => (
+                            <div key={skill.id} className="skill-chip fade-in-react">
+                                <i className={skill.icon}></i>
+                                <span>{skill.name}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        const rootNode = document.getElementById('react-tech-arsenal');
+        if (rootNode) {
+            const root = ReactDOM.createRoot(rootNode);
+            root.render(<TechArsenal />);
+        }
+    </script>
+    <!-- Custom Glowing Cursor UI -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+</body>
+
+</html>

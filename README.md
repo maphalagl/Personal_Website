@@ -1,0 +1,46 @@
+# 💎 Personal Portfolio - Lutendo George Maphala
+
+Welcome to the official repository of my personal portfolio website. This project showcases a high-end, modern web design aesthetic focused on **Glassmorphism**, **Cyber-Neon** themes, and interactive **React** components.
+
+## 🚀 Live Demo
+The site is optimized for deployment on **Vercel**. 
+[Click here to see the live version (Once hosted)]
+
+---
+
+## ✨ Key Features
+- **Modern UI/UX:** Built with a "Cyber-Dark" aesthetic using premium glassmorphism and smooth CSS animations.
+- **Interactive Tech Arsenal:** A React-powered skills grid with real-time category filtering.
+- **Cyber Cursor:** A custom JavaScript-tracked radial cursor with magnetic hover effects.
+- **3D Perspective:** Powered by `vanilla-tilt.js` for an immersive card hover experience.
+- **Full-Screen Marquee:** Infinite horizontal project flows for a dynamic showcase.
+- **Fully Responsive:** Seamless layout scaling for mobile, tablet, and desktop viewports.
+
+## 🛠️ Tech Stack
+- **Structure:** Semantic HTML5
+- **Logic:** Vanilla JavaScript (ES6+), React.js (via CDN)
+- **Styling:** Vanilla CSS3 (Custom Variables, Keyframe Animations)
+- **Icons:** Font Awesome 6.4
+- **Fonts:** Google Fonts (Outfit)
+
+## 📦 Local Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/maphalagl/Personal_Website.git
+   ```
+2. Open `index.html` in your favorite browser or use Live Server in VS Code.
+
+## 🚢 Deployment to Vercel
+1. Push your latest changes to GitHub.
+2. Go to [Vercel Dashboard](https://vercel.com/dashboard).
+3. Click **New Project** and import your `Personal_Website` repository.
+4. Vercel will automatically detect the settings. Click **Deploy**.
+
+---
+
+### 📬 Contact
+- **Email:** [Your Email Address]
+- **LinkedIn:** [Your LinkedIn Profile]
+- **GitHub:** [@maphalagl](https://github.com/maphalagl)
+
+Built with ❤️ by **Lutendo George Maphala**
