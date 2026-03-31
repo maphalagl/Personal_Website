@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. 3D TILT EFFECT on Glass Cards (Disabled on mobile for performance)
     const tiltCards = document.querySelectorAll('.tilt-card, .vanilla-tilt');
-    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    isTouchDevice = window.matchMedia('(pointer: coarse)').matches || isTouchDevice;
 
     if (!isTouchDevice) {
         tiltCards.forEach(card => {
