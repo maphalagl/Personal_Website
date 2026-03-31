@@ -23,24 +23,12 @@ The site is optimized for deployment on **Vercel**.
 - **Icons:** Font Awesome 6.4
 - **Fonts:** Google Fonts (Outfit)
 
-## 📦 Local Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/maphalagl/Personal_Website.git
-   ```
-2. Open `index.html` in your favorite browser or use Live Server in VS Code.
-
-## 🚢 Deployment to Vercel
-1. Push your latest changes to GitHub.
-2. Go to [Vercel Dashboard](https://vercel.com/dashboard).
-3. Click **New Project** and import your `Personal_Website` repository.
-4. Vercel will automatically detect the settings. Click **Deploy**.
 
 ---
 
 ### 📬 Contact
-- **Email:** [Your Email Address]
-- **LinkedIn:** [Your LinkedIn Profile]
+- **Email:** gmlutendo@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/lutendo-george-maphala-660689181/
 - **GitHub:** [@maphalagl](https://github.com/maphalagl)
 
 Built with ❤️ by **Lutendo George Maphala**
