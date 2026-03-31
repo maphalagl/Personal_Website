@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 0. DEVICE DETECTION
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     // 1. THEME TOGGLE LOGIC (Fixed targeted towards 'html' root!)
     const themeBtn = document.getElementById('theme-btn');
