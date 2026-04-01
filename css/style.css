@@ -236,8 +236,9 @@ header {
     font-size: 2rem;
     font-weight: 800;
     cursor: pointer;
-    min-width: 151px;
-    /* Match right controls width for symmetry */
+    min-width: 170px;
+    /* Definitive balance for symmetry */
+    flex-shrink: 0;
 }
 
 .logo span {
@@ -297,7 +298,10 @@ header {
     display: flex;
     align-items: center;
     gap: 20px;
-    justify-self: end;
+    min-width: 170px;
+    /* Balanced with .logo for absolute center math */
+    justify-content: flex-end;
+    flex-shrink: 0;
 }
 
 /* Theme Toggle Button */
