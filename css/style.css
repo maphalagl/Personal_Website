@@ -169,8 +169,7 @@ html[data-theme="light"] body::before {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 4%;
-    /* Slightly smaller for more content room */
+    padding: 0 20px;
     box-sizing: border-box;
 }
 
@@ -1516,31 +1515,36 @@ header {
     }
 }
 
-/* v3.7 Timeline Mobile Hardening (Locked for Vivo V2322 / Y27s) */
+/* v3.8 Vivo / Narrow Mobile Gutter Hardening */
 @media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px !important;
+        /* Force safe gutters for curved Vivo screens */
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .logo,
+    .nav-controls {
+        min-width: unset;
+        /* Drop fixed widths on mobile */
+        flex: 0 1 auto;
+    }
+
     .timeline-wrapper {
-        padding-left: 32px;
-        /* Tighter for narrow Vivo screens */
+        padding-left: 35px;
     }
 
     .timeline-track {
-        left: 12px;
-        width: 2px;
+        left: 15px;
     }
 
     .timeline-node {
         left: -27px;
-        /* 32 - 27 = 5px edge. Track at 12px centers with 14px node */
+        /* 35 - 27 = 8px edge. Track at 15px centers with 14px node */
         width: 14px;
         height: 14px;
-    }
-
-    .logo {
-        font-size: 1.7rem;
-        /* Optimized for narrow Vivo headers */
-    }
-
-    .nav-controls {
-        gap: 12px;
     }
 }
