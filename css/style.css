@@ -1515,7 +1515,7 @@ header {
     }
 }
 
-/* v3.8 Vivo / Narrow Mobile Gutter Hardening */
+/* v3.9 Vivo / Narrow Mobile Gutter Hardening & Slim-Fit */
 @media screen and (max-width: 768px) {
     .container {
         padding: 0 20px !important;
@@ -1546,5 +1546,15 @@ header {
         /* 35 - 27 = 8px edge. Track at 15px centers with 14px node */
         width: 14px;
         height: 14px;
+    }
+
+    /* v3.9 Slim-Fit Spacing */
+    #contact {
+        padding-bottom: 5px !important;
+    }
+
+    .glass-footer {
+        padding: 20px 0;
+        margin-top: 20px;
     }
 }
