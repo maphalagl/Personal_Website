@@ -54,7 +54,7 @@ html {
     scroll-padding-top: 100px;
 }
 
-body {
+/* body {
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
@@ -62,6 +62,28 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
     position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+} */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    position: relative;
+
+    min-height: 100vh;
+
+    /* ADD THESE */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Performance-Optimized Background Layer */
@@ -71,7 +93,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image:
         radial-gradient(circle at 50% 50%, rgba(20, 20, 60, 0.4) 0%, transparent 100%),
         radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 50%),
@@ -180,6 +202,11 @@ html[data-theme="light"] body::before {
     justify-content: center;
 }
 
+#contact.section-spacing {
+    padding-bottom: 40px;
+}
+
+
 .mt-2 {
     margin-top: 1rem;
 }
@@ -220,17 +247,6 @@ header {
     gap: 0;
 }
 
-/* Flex spacers for absolute centering on desktop */
-.nav-spacer {
-    flex: 1;
-}
-
-@media screen and (max-width: 1024px) {
-    .nav-spacer {
-        display: none;
-    }
-}
-
 .logo {
     font-size: 2rem;
     font-weight: 800;
@@ -244,6 +260,7 @@ header {
     color: var(--accent);
 }
 
+/* Desktop Navigation */
 @media (min-width: 1025px) {
     .nav-links {
         display: flex;
@@ -252,12 +269,6 @@ header {
     }
 }
 
-@media (max-width: 1024px) {
-    .nav-links {
-        display: none;
-        /* Suppress desktop view on all mobile/tablets */
-    }
-}
 
 .nav-links a {
     color: var(--text-color);
@@ -747,31 +758,14 @@ header {
     border-left: 2px solid var(--glass-border);
     padding-left: 35px;
     position: relative;
+    margin-bottom: 50px;
     transition: transform 0.3s ease;
 }
 
-.exp-item:hover {
-    transform: translateX(10px);
+.exp-item:last-child {
+    margin-bottom: 0;
 }
 
-.exp-item::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 15px var(--accent-glow);
-    transition: 0.3s;
-}
-
-.exp-item:hover::before {
-    transform: scale(1.5);
-    background: var(--accent-secondary);
-    box-shadow: 0 0 25px var(--accent-secondary);
-}
 
 .exp-item h3 {
     font-size: 2.2rem;
@@ -1238,9 +1232,10 @@ header {
     border-top: 1px solid var(--glass-border);
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    padding: 30px 0;
-    margin-top: 40px;
+    padding: 30px 20px 20px 20px;
+    margin-top: 20px;
 }
+
 
 .footer-content {
     display: flex;
@@ -1254,99 +1249,128 @@ header {
 /* RESPONSIVE DESIGN (Tablets & Mobile)  */
 /* ------------------------------------- */
 
-@media (max-width: 1024px) {
-    .glass-hero-panel {
-        flex-direction: column-reverse;
-        padding: 50px;
-        gap: 40px;
-        text-align: center;
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM (v4.4 Consolidated)
+   ========================================================================== */
+
+/* 1. Mobile First - Up to 480px */
+@media (max-width: 480px) {
+    .hero-hub-content .hero-name {
+        font-size: 2.5rem;
     }
 
-    .hero-hub-content {
-        display: flex;
+    .photo-frame {
+        width: 200px;
+        height: 200px;
+    }
+
+    #contact.section-spacing,
+    #contact .container,
+    .contact-bento,
+    .bento-box {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .bento-box h3,
+    .bento-box p {
+        margin-bottom: 0 !important;
+    }
+
+    footer {
+        margin-top: 0 !important;
+        padding-top: 10px !important;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links {
+        width: 100%;
         flex-direction: column;
-        align-items: center;
+        box-sizing: border-box;
     }
 
-    .cta-buttons {
-        justify-content: center !important;
+    .nav-links a {
+        padding: 10px;
+        word-break: break-word;
     }
 
-    .education-grid {
-        grid-template-columns: 1fr;
-        /* Stack vertically on mobile */
-        gap: 25px;
+    .hamburger {
+        top: 10px;
+        right: 10px;
+        position: fixed;
+        z-index: 999;
+    }
+
+    #theme-btn {
+        top: 10px;
+        right: 60px;
+        position: fixed;
+        z-index: 999;
     }
 
     .project-card {
         width: 100%;
-        max-width: 320px;
-        /* Ensure cards never exceed screen width */
-    }
-
-    .experience-layout {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .experience-intro {
-        position: static;
-    }
-
-    /* Contact Bento Layout (Desktop/Tablet) */
-    .contact-bento {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-            "form form email"
-            "form form phone"
-            "form form social";
-        gap: 25px;
-    }
-
-    .bento-form {
-        grid-area: form;
-    }
-
-    .bento-email {
-        grid-area: email;
-    }
-
-    .bento-phone {
-        grid-area: phone;
-    }
-
-    .bento-social {
-        grid-area: social;
-    }
-
-    .bento-box {
-        padding: 30px;
-    }
-
-    .contact-mini {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 30px;
-        text-align: left;
+        margin: 10px 0;
     }
 }
 
-@media (max-width: 1024px) {
-    .contact-bento {
-        grid-template-columns: 1fr;
-        grid-template-areas: none;
+/* 2. Large Phones - Up to 768px */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px !important;
     }
 
-    .bento-form,
-    .bento-email,
-    .bento-phone,
-    .bento-social {
-        grid-area: auto;
+    .navbar {
+        height: 70px;
+    }
+
+    .logo,
+    .nav-controls {
+        min-width: unset;
+        flex: 0 1 auto;
+    }
+
+    .timeline-wrapper {
+        padding-left: 35px;
+    }
+
+    .timeline-track {
+        left: 15px;
+    }
+
+    .timeline-node {
+        left: -27px;
+        width: 14px;
+        height: 14px;
+    }
+
+    #contact {
+        padding-bottom: 0 !important;
+    }
+
+    .glass-footer {
+        padding: 40px 0 20px 0 !important;
+        margin-top: 0;
     }
 }
 
+/* 3. Tablets - Up to 1024px */
 @media (max-width: 1024px) {
+    .nav-spacer {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
     header {
         position: fixed;
         width: 100%;
@@ -1365,7 +1389,6 @@ header {
 
     .logo {
         font-size: 1.5rem !important;
-        /* Smaller logo for mobile to prevent overflow */
         white-space: nowrap;
     }
 
@@ -1384,7 +1407,6 @@ header {
         gap: 30px;
         z-index: 9999;
         visibility: hidden;
-        /* Prevent blocking events when closed */
         pointer-events: none;
     }
 
@@ -1411,14 +1433,9 @@ header {
         opacity: 1 !important;
     }
 
-    .hamburger i {
-        font-size: 1.5rem !important;
-    }
-
     .theme-toggle {
         display: flex !important;
         width: 46px !important;
-        /* Matched with hamburger */
         height: 46px !important;
         align-items: center;
         justify-content: center;
@@ -1434,127 +1451,83 @@ header {
         gap: 12px;
         z-index: 10001;
         justify-self: end;
-        /* Disable animations for instant responsiveness on mobile */
         transition: none !important;
         animation: none !important;
         transform: none !important;
     }
 
-    .logo,
-    .theme-toggle,
-    .hamburger {
-        transition: none !important;
-        animation: none !important;
-        transform: none !important;
+    .glass-hero-panel {
+        flex-direction: column-reverse;
+        padding: 50px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-hub-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-hub-content .hero-name {
         font-size: 3rem;
     }
-}
 
-@media (max-width: 480px) {
-    .hero-hub-content .hero-name {
-        font-size: 2.5rem;
+    .cta-buttons {
+        justify-content: center !important;
     }
 
-    .photo-frame {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-/* CUSTOM CURSOR & TILT (Desktop Only) */
-@media (pointer: fine) {
-
-    body.custom-cursor-active,
-    body.custom-cursor-active * {
-        cursor: none !important;
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
-    .cursor-dot,
-    .cursor-outline {
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 99999;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+    .project-card {
+        width: 100%;
+        max-width: 320px;
     }
 
-    .cursor-dot {
-        width: 8px;
-        height: 8px;
-        background: var(--accent);
+    .experience-layout {
+        flex-direction: column;
+        gap: 40px;
     }
 
-    .cursor-outline {
-        width: 40px;
-        height: 40px;
-        border: 2px solid var(--accent-glow);
-        transition: all 0.2s;
+    .experience-intro {
+        position: static;
     }
 
-    .cursor-outline.hover {
-        width: 60px;
-        height: 60px;
-        background: rgba(0, 240, 255, 0.1);
+    .contact-bento {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
-    body.custom-cursor-active .cursor-dot,
-    body.custom-cursor-active .cursor-outline {
-        opacity: 1;
+    .bento-form,
+    .bento-email,
+    .bento-phone,
+    .bento-social {
+        grid-area: auto;
     }
 
-    .vanilla-tilt {
-        transform-style: preserve-3d;
-        will-change: transform;
+    .bento-box {
+        padding: 30px;
+    }
+
+    .contact-mini {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 30px;
+        text-align: left;
     }
 }
 
-/* v3.9 Vivo / Narrow Mobile Gutter Hardening & Slim-Fit */
-@media screen and (max-width: 768px) {
+/* 4. Desktop - 1025px and up */
+@media (min-width: 1025px) {
+    /* Already handled by base desktop-first styles or defined in header section */
+}
+
+/* 5. Large Screens - 1440px and up */
+@media (min-width: 1440px) {
     .container {
-        padding: 0 20px !important;
-        /* Force safe gutters for curved Vivo screens */
-    }
-
-    .navbar {
-        height: 70px;
-    }
-
-    .logo,
-    .nav-controls {
-        min-width: unset;
-        /* Drop fixed widths on mobile */
-        flex: 0 1 auto;
-    }
-
-    .timeline-wrapper {
-        padding-left: 35px;
-    }
-
-    .timeline-track {
-        left: 15px;
-    }
-
-    .timeline-node {
-        left: -27px;
-        /* 35 - 27 = 8px edge. Track at 15px centers with 14px node */
-        width: 14px;
-        height: 14px;
-    }
-
-    /* v3.9 Slim-Fit Spacing */
-    #contact {
-        padding-bottom: 5px !important;
-    }
-
-    .glass-footer {
-        padding: 20px 0;
-        margin-top: 20px;
+        max-width: 1400px;
     }
 }
