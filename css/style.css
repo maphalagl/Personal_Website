@@ -69,6 +69,11 @@ html {
 html,
 body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
@@ -82,6 +87,12 @@ body {
     min-height: 100vh;
 
     /* ADD THESE */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
@@ -199,11 +210,11 @@ html[data-theme="light"] body::before {
     padding: 40px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 #contact.section-spacing {
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }
 
 
@@ -1232,8 +1243,8 @@ header {
     border-top: 1px solid var(--glass-border);
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    padding: 30px 20px 20px 20px;
-    margin-top: 20px;
+    padding: 20px;
+    margin-top: auto;
 }
 
 
@@ -1265,18 +1276,6 @@ header {
         height: 200px;
     }
 
-    #contact.section-spacing,
-    #contact .container,
-    .contact-bento,
-    .bento-box {
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-    }
-
-    .bento-box h3,
-    .bento-box p {
-        margin-bottom: 0 !important;
-    }
 
     footer {
         margin-top: 0 !important;
@@ -1351,14 +1350,6 @@ header {
         height: 14px;
     }
 
-    #contact {
-        padding-bottom: 0 !important;
-    }
-
-    .glass-footer {
-        padding: 40px 0 20px 0 !important;
-        margin-top: 0;
-    }
 }
 
 /* 3. Tablets - Up to 1024px */
@@ -1374,7 +1365,7 @@ header {
     header {
         position: fixed;
         width: 100%;
-        background: #0a0a15 !important;
+        background: var(--glass-bg) !important;
         border-bottom: 2px solid var(--accent);
         z-index: 10000;
         transition: none !important;
@@ -1400,7 +1391,7 @@ header {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: #0a0a15;
+        background: var(--glass-bg);
         padding: 50px 0;
         transition: left 0.3s ease, visibility 0.3s;
         align-items: center;
