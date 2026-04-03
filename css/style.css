@@ -93,8 +93,8 @@ body {
 
 main {
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 /* Performance-Optimized Background Layer */
@@ -214,9 +214,8 @@ html[data-theme="light"] body::before {
 }
 
 #contact.section-spacing {
-    padding-bottom: 10px;
+    padding-bottom: 35px;
 }
-
 
 .mt-2 {
     margin-top: 1rem;
@@ -1130,10 +1129,11 @@ header {
 .contact-bento {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: auto;
     gap: 25px;
     max-width: 1050px;
     margin: 0 auto;
+    min-height: 300px;
 }
 
 .bento-form {
@@ -1508,6 +1508,14 @@ header {
         justify-content: flex-start;
         gap: 30px;
         text-align: left;
+    }
+
+    main {
+        flex: unset;
+    }
+
+    .glass-footer {
+        margin-top: 0;
     }
 }
 
