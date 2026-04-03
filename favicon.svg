@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="circle">
+      <circle cx="50" cy="50" r="50" />
+    </clipPath>
+  </defs>
+  <!-- Force the image to cover the 100x100 space and crop to a perfect circle -->
+  <image width="100" height="100" href="images/Lutendo.jpg" clip-path="url(#circle)" preserveAspectRatio="xMidYMid slice" />
+</svg>
