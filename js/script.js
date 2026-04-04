@@ -263,4 +263,98 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         renderSkills('All');
     }
+
+    /* ============================= */
+    /* INFINITE SCROLL & SWIPE (PROJECTS) */
+    /* ============================= */
+    const flowContainer = document.querySelector('.projects-flow-container');
+    const flowTrack = document.querySelector('.projects-flow-track');
+
+    if (flowContainer && flowTrack) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let isHovered = false;
+        let isTouching = false;
+        let isVisible = false;
+        let scrollPaf = null;
+
+        const observerFlow = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!isVisible) {
+                        isVisible = true;
+                        scrollPaf = requestAnimationFrame(autoScrollProjects);
+                    }
+                } else {
+                    isVisible = false;
+                    if (scrollPaf) cancelAnimationFrame(scrollPaf);
+                }
+            });
+        }, { threshold: 0.0 });
+        observerFlow.observe(flowContainer);
+
+        const autoScrollSpeed = 1;
+
+        function autoScrollProjects() {
+            if (!isVisible) return;
+
+            if (!isHovered && !isDown && !isTouching) {
+                flowContainer.scrollLeft -= autoScrollSpeed;
+            }
+
+            const halfway = flowTrack.scrollWidth / 2;
+
+            if (flowContainer.scrollLeft <= 0) {
+                flowContainer.scrollLeft = halfway;
+            } else if (flowContainer.scrollLeft >= halfway) {
+                flowContainer.scrollLeft = 0;
+            }
+
+            scrollPaf = requestAnimationFrame(autoScrollProjects);
+        }
+
+        setTimeout(() => {
+            flowContainer.scrollLeft = flowTrack.scrollWidth / 2 - 10;
+        }, 100);
+
+        flowContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            flowContainer.style.cursor = 'grabbing';
+            startX = e.pageX - flowContainer.offsetLeft;
+            scrollLeft = flowContainer.scrollLeft;
+        });
+
+        flowContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            isHovered = false;
+            flowContainer.style.cursor = 'grab';
+        });
+
+        flowContainer.addEventListener('mouseenter', () => {
+            isHovered = true;
+            flowContainer.style.cursor = 'grab';
+        });
+
+        flowContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            flowContainer.style.cursor = 'grab';
+        });
+
+        flowContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - flowContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            flowContainer.scrollLeft = scrollLeft - walk;
+        });
+
+        flowContainer.addEventListener('touchstart', () => {
+            isTouching = true;
+        }, { passive: true });
+
+        flowContainer.addEventListener('touchend', () => {
+            isTouching = false;
+        });
+    }
 });
